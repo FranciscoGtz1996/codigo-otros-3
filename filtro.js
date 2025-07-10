@@ -1,14 +1,15 @@
 // Tenemos un li de productos
-
+//Cambiamos la ruta de las imagenes, por la carpeta hecha de assets
 const productos = [
-  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
-  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg"},
-  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
-  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
-  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
+  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "assets/taco-negro.jpg"},
+  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "assets/taco-azul.jpg"},
+  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "assets/taco-negro.jpg"},
+  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "assets/taco-azul.jpg"},
+  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "assets/zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
+//Agregamos el arreglo de los productos, para mostrarlos
+const li = document.getElementsByName("lista-de-productos") [0]; 
 const $i = document.querySelector('.input');
 
 for (let i = 0; i < productos.length; i++) {
@@ -29,7 +30,7 @@ for (let i = 0; i < productos.length; i++) {
 }
 
 displayProductos(productos)
-const botonDeFiltro = document.querySelector("button");
+const botonDeFiltro = document.querySelector(".button");
 
 botonDeFiltro.onclick = function() {
   while (li.firstChild) {
