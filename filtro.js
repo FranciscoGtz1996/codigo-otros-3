@@ -3,13 +3,13 @@
 const productos = [
   {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "assets/taco-negro.jpg"},
   {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "assets/taco-azul.jpg"},
-  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "assets/taco-negro.jpg"},
-  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "assets/taco-azul.jpg"},
+  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "assets/bota-negra.jpg"}, /**Cambie la immagen por bota-negra */
+  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "assets/bota-azul.jpg"}, /**Cambie la imagen por bota azul */
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "assets/zapato-rojo.jpg"}
 ]
 
-//Agregamos el arreglo de los productos, para mostrarlos
-const li = document.getElementsByName("lista-de-productos") [0]; 
+//Seleccionamos elementos del html para mostrar el el arreglo de los productos
+const li = document.querySelector(".lista-de-productos"); 
 const $i = document.querySelector('.input');
 
 for (let i = 0; i < productos.length; i++) {
@@ -29,10 +29,10 @@ for (let i = 0; i < productos.length; i++) {
   li.appendChild(d)
 }
 
-displayProductos(productos)
+//displayProductos(productos)
 const botonDeFiltro = document.querySelector(".button");
 
-botonDeFiltro.onclick = function() {
+botonDeFiltro.addEventListener("click", function() { //Agregue addEventListener function
   while (li.firstChild) {
     li.removeChild(li.firstChild);
   }
@@ -57,7 +57,7 @@ botonDeFiltro.onclick = function() {
   
     li.appendChild(d)
   }
-}
+});
 
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
